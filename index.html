@@ -12,6 +12,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+    <!-- luv u kevin -->
     <div id="root"></div>
 
     <script type="text/babel">
@@ -161,8 +162,6 @@
                 const anyP2Selected = Object.values(priorities).some(p => p === 2);
                 let filtered = solverResults;
                 
-                // CRITICAL: If any targets are marked P2, only show combinations that can produce at least one of them.
-                // This keeps the result list focused and manageable when specific targets are set.
                 if (anyP2Selected) {
                     filtered = solverResults.filter(r => r.p2Count > 0);
                 }
