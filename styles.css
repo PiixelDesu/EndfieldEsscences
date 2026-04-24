@@ -1,0 +1,284 @@
+body {
+    background-color: #0b0b0b;
+    color: #d0d0d0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.weapon-img-container {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 4px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-header {
+    background-color: #1a1a1a;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.category-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    opacity: 0.8;
+}
+
+.weapon-card {
+    background-color: #151515;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    transition: transform 0.1s ease-out, border-color 0.1s;
+    user-select: none;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.weapon-card:hover {
+    transform: scale(1.01);
+    border-color: #444;
+    z-index: 10;
+}
+
+.card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+}
+
+.accent-6 { background: rgb(255, 112, 0); }
+.accent-5 { background: rgb(225, 186, 3); }
+.accent-4 { background: rgb(148, 81, 248); }
+.accent-3 { background: rgb(38, 186, 251); }
+
+.img-bg-6 { background: linear-gradient(135deg, rgba(255,112,0,0.2) 0%, rgba(255,112,0,0.05) 100%); border: 1px solid rgba(255,112,0,0.3); }
+.img-bg-5 { background: linear-gradient(135deg, rgba(225,186,3,0.2) 0%, rgba(225,186,3,0.05) 100%); border: 1px solid rgba(225,186,3,0.3); }
+.img-bg-4 { background: linear-gradient(135deg, rgba(148, 81, 248, 0.2) 0%, rgba(148, 81, 248, 0.05) 100%); border: 1px solid rgba(148, 81, 248, 0.3); }
+.img-bg-3 { background: linear-gradient(135deg, rgba(38, 186, 251, 0.2) 0%, rgba(38, 186, 251, 0.05) 100%); border: 1px solid rgba(38, 186, 251, 0.3); }
+
+.priority-0 { opacity: 0.25; filter: grayscale(1); }
+
+.priority-2 {
+    box-shadow: 0 0 0 2px #eef6ff;
+    border-color: #eef6ff !important;
+}
+
+.star-icon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.sticky-results {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.results-card {
+    background-color: #151515;
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.results-table { font-size: 0.9rem; }
+.results-table tr { border-bottom: 1px solid #222; cursor: pointer; }
+.results-table tr:hover { background-color: rgba(255,255,255,0.03); }
+
+.weapon-name-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+}
+
+.weapon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.stat-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    background: #222;
+    color: #888;
+    border-radius: 3px;
+    margin-right: 5px;
+    border: 1px solid #333;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.reset-btn {
+    font-size: 0.75rem;
+    background: #222;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 4px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.reset-btn:hover {
+    background: #333;
+    border-color: #666;
+    color: #eee;
+}
+
+.color-p2 { color: #eef6ff !important; border-color: #eef6ff !important; }
+.color-p1 { color: #a0d8ef !important; border-color: #a0d8ef !important; }
+.color-p0 { color: #555 !important; border-color: #333 !important; }
+
+.color-6-rarity { color: rgb(255, 112, 0) !important; }
+.color-5-rarity { color: rgb(225, 186, 3) !important; }
+.color-4-rarity { color: rgb(148, 81, 248) !important; }
+.color-3-rarity { color: rgb(38, 186, 251) !important; }
+
+.outcome-row {
+    padding: 10px 0;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.match-count {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+.weapon-container-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 2px 0;
+    flex: 1;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0b0b0b; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+.loading-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #0b0b0b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Styles */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.custom-modal {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #fff;
+    position: relative;
+}
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.modal-btn {
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+.btn-confirm { background: #d9534f; border: 1px solid #d43f3a; color: white; }
+.btn-cancel { background: #333; border: 1px solid #444; color: #ccc; }
+
+/* Detail Modal Styles */
+.compact-weapon-card {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.compact-weapon-card .weapon-img-container {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    margin-right: 10px;
+}
+
+/* Tooltip Styles */
+.stat-tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    border: 1px solid #444;
+    padding: 8px;
+    border-radius: 6px;
+    z-index: 3000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    pointer-events: none;
+    display: none;
+    min-width: 180px;
+}
+.weapon-name-box:hover .stat-tooltip {
+    display: block;
+}
+.stat-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #444 transparent;
+}
