@@ -198,7 +198,6 @@ body {
     z-index: 1000;
 }
 
-/* Modal Styles */
 .custom-modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -236,7 +235,6 @@ body {
 .btn-confirm { background: #d9534f; border: 1px solid #d43f3a; color: white; }
 .btn-cancel { background: #333; border: 1px solid #444; color: #ccc; }
 
-/* Detail Modal Styles */
 .compact-weapon-card {
     background: #222;
     border: 1px solid #333;
@@ -253,7 +251,6 @@ body {
     margin-right: 10px;
 }
 
-/* Tooltip Styles */
 .stat-tooltip {
     position: absolute;
     top: calc(100% + 8px);
